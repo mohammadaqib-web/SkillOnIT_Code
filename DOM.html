@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      html {
+        font-size: 40px;
+      }
+      p {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="p1">
+      <p id="para"></p>
+      <input type="text" id="inputText" onchange="change()">
+      <button id="clickMe">Click me</button>
+    </div>
+
+    <script>
+        let head = document.querySelector("#p1")
+       
+        // let para = document.createElement("p");
+        // para.innerText = "Hello"
+
+        // head.append(para)
+
+
+        let p1 = document.querySelector("#para");
+        let inputText = document.querySelector("#inputText")
+        // inputText.value
+        // inputText.addEventListener("change",(event)=>{
+        //     event.preventDefault()
+        //     p1.innerText = inputText.value
+            
+        // })
+
+        function change(){
+            p1.innerText = inputText.value
+        }
+        // p1.remove()
+        // let btn = document.querySelector("#clickMe");
+        // btn.addEventListener("mouseover",()=>{
+        //     p1.style.color="red"
+        //     p1.innerText = "Hello"
+        // })
+        // btn.addEventListener("mouseout",()=>{
+        //     p1.style.color="black"
+        //     p1.innerText = "Hi"
+        // })
+    </script>
+  </body>
+</html>
