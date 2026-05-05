@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .left {
+        border: 1px solid;
+        width: 300px;
+        height: 400px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 20px;
+      }
+      input,
+      textarea,
+      button {
+        padding: 10px;
+        width: 95%;
+      }
+      button {
+        background-color: rgba(255, 0, 0, 0.651);
+        color: white;
+        font-weight: bold;
+      }
+      img {
+        /* border: 1px solid; */
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid;
+        width: 700px;
+        /* height: 200px; */
+        border-radius: 10px;
+        padding: 10px;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+      .right-sec {
+        border-left: 2px solid;
+        padding-left: 10px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <h1>Profile Info</h1>
+        <input type="text" placeholder="Name" />
+        <br />
+        <br />
+        <input type="text" placeholder="Title" />
+        <br />
+        <br />
+        <textarea name="desc" id="" placeholder="Description"></textarea>
+        <br />
+        <br />
+        <input type="file" />
+        <br /><br />
+        <button>Add Profile</button>
+      </div>
+
+      <div>
+        <div class="right">
+          <div class="left-sec">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNfTkosk_XISYGUe8YAUWMrv0kcP5a4YMcVQ&s"
+              alt="profile image"
+            />
+          </div>
+          <div class="right-sec">
+            <h2>Jisan</h2>
+            <h3>Frontend Developer</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+              maxime consequuntur sapiente, nesciunt rerum praesentium nemo quod
+              earum aspernatur est commodi quas magnam maiores? Vero est velit
+              eius neque nemo.
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="left-sec">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNfTkosk_XISYGUe8YAUWMrv0kcP5a4YMcVQ&s"
+              alt="profile image"
+            />
+          </div>
+          <div class="right-sec">
+            <h2>Jisan</h2>
+            <h3>Frontend Developer</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+              maxime consequuntur sapiente, nesciunt rerum praesentium nemo quod
+              earum aspernatur est commodi quas magnam maiores? Vero est velit
+              eius neque nemo.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

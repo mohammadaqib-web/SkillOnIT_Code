@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            /* flex-direction: column-reverse; */
+            justify-content: center;
+            background-color: red;
+            align-items:center;
+            height: 100px;
+        }
+        .container-grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,100px);
+            gap: 10px;
+        }
+        @media ((min-width:480px) and (max-width:768px)){
+            *{
+                background-color: black;
+            }
+            .container-grid{
+                grid-template-columns: 1fr;
+                gap: 0px;
+            }
+        }
+        /* @media (min-width:480px){
+            *{
+                background-color: grey;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <!-- <div style="margin-top: 20px;">Item 3</div> -->
+    </div>
+    <div class="container-grid">
+        <div style="background-color: aquamarine;">Grid Item 1</div>
+        <div style="background-color: aqua;">Grid Item 2</div>
+        <div style="background-color:bisque;">Grid Item 3</div>
+        <div style="background-color:blueviolet;">Grid Item 4</div>
+        <!-- <div style="background-color:blueviolet;">Grid Item 5</div>
+        <div style="background-color:blueviolet;">Grid Item 6</div>
+        <div style="background-color:blueviolet;">Grid Item 6</div> -->
+        <!-- <div style="margin-top: 20px;">Item 3</div> -->
+    </div>
+</body>
+</html>

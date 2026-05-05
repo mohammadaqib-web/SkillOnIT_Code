@@ -14,43 +14,56 @@
     </style>
   </head>
   <body>
-    <div id="p1">
+    <!-- <div id="p1">
       <p id="para"></p>
       <input type="text" id="inputText" onchange="change()">
       <button id="clickMe">Click me</button>
-    </div>
+    </div> -->
+    <p id="para">Hello</p>
+    <button id="change-btn">Change Text</button>
 
     <script>
-        let head = document.querySelector("#p1")
-       
-        // let para = document.createElement("p");
-        // para.innerText = "Hello"
+      let par = document.querySelector("#para");
+      let btn = document.querySelector("#change-btn");
+      btn.addEventListener("click", () => {
+        par.innerText = "Hi";
+        par.style.backgroundColor = "red";
 
-        // head.append(para)
+        let newPara = document.createElement("p");
+        newPara.innerText = "New Para";
 
+        document.body.append(newPara);
+      });
 
-        let p1 = document.querySelector("#para");
-        let inputText = document.querySelector("#inputText")
-        // inputText.value
-        // inputText.addEventListener("change",(event)=>{
-        //     event.preventDefault()
-        //     p1.innerText = inputText.value
-            
-        // })
+      // let head = document.querySelector("#p1")
 
-        function change(){
-            p1.innerText = inputText.value
-        }
-        // p1.remove()
-        // let btn = document.querySelector("#clickMe");
-        // btn.addEventListener("mouseover",()=>{
-        //     p1.style.color="red"
-        //     p1.innerText = "Hello"
-        // })
-        // btn.addEventListener("mouseout",()=>{
-        //     p1.style.color="black"
-        //     p1.innerText = "Hi"
-        // })
+      // // let para = document.createElement("p");
+      // // para.innerText = "Hello"
+
+      // // head.append(para)
+
+      // let p1 = document.querySelector("#para");
+      // let inputText = document.querySelector("#inputText")
+      // // inputText.value
+      // // inputText.addEventListener("change",(event)=>{
+      // //     event.preventDefault()
+      // //     p1.innerText = inputText.value
+
+      // // })
+
+      // function change(){
+      //     p1.innerText = inputText.value
+      // }
+      // // p1.remove()
+      // // let btn = document.querySelector("#clickMe");
+      // // btn.addEventListener("mouseover",()=>{
+      // //     p1.style.color="red"
+      // //     p1.innerText = "Hello"
+      // // })
+      // // btn.addEventListener("mouseout",()=>{
+      // //     p1.style.color="black"
+      // //     p1.innerText = "Hi"
+      // // })
     </script>
   </body>
 </html>
