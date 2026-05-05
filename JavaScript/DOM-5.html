@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+        gap: 30px;
+      }
+      .left {
+        border: 1px solid;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 300px;
+      }
+      input,
+      textarea {
+        padding: 10px;
+        width: 90%;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(60, 151, 225);
+        font-weight: bold;
+        color: white;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      h5 {
+        color: grey;
+      }
+      .right>div {
+        border: 1px solid;
+        padding: 20px;
+        border-radius: 10px;
+        width: 200px;
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+      .right{
+        display:flex;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="left">
+        <h1>Profile Info</h1>
+        <br />
+        <input type="text" placeholder="Enter your name" id="name" />
+        <br />
+        <br />
+        <input type="text" placeholder="Enter your role" id="role" />
+        <br />
+        <br />
+        <textarea name="" placeholder="Description" id="desc"></textarea>
+        <br /><br />
+        <input type="file" id="imageFile" accept="image/*" />
+        <br /><br />
+        <button>Add Profile</button>
+      </div>
+      <div class="right">
+        <!-- <img
+          src="https://object.pixocial.com/pixocial/dmxffni837f1xrj8pki9xgrl.jpg"
+          alt=""
+        />
+        <h2>Name</h2>
+        <h4>role</h4>
+        <h5>Description</h5> -->
+      </div>
+    </div>
+
+    <script>
+      let inputName = document.querySelector("#name");
+      let inputRole = document.querySelector("#role");
+      let inputDesc = document.querySelector("#desc");
+      let inputImage = document.querySelector("#imageFile");
+      let btn = document.querySelector("button");
+      let rightSec = document.querySelector(".right");
+
+      btn.addEventListener("click", () => {
+        let image = document.createElement("img");
+        image.src = URL.createObjectURL(inputImage.files[0]);
+
+        let h2 = document.createElement("h2");
+        h2.innerText = inputName.value;
+
+        let h4 = document.createElement("h4");
+        h4.innerText = inputRole.value;
+
+        let h5 = document.createElement("h5");
+        h5.innerText = inputDesc.value
+
+        let div = document.createElement("div");
+        div.append(image,h2,h4,h5);
+        
+        rightSec.append(div);
+
+        inputName.value = ""
+        inputRole.value = ""
+        inputDesc.value = ""
+        inputImage.value = ""
+      });
+    </script>
+  </body>
+</html>

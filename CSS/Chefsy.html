@@ -45,7 +45,7 @@
         border: 1px solid rgba(0, 0, 0, 0.347);
       }
       button {
-        width: 100px;
+        width: 100%;
         border-radius: 20px;
         border: none;
         font-weight: bold;
@@ -74,10 +74,10 @@
         font-size: 1.2rem;
         /* margin-top: 100px; */
         position: absolute;
-        bottom: 0;
+
         margin-bottom: 10px;
       }
-      .user-info{
+      .user-info {
         width: 200px;
         background-color: rgba(255, 255, 255, 0.31);
         position: absolute;
@@ -87,8 +87,102 @@
         padding: 20px 30px;
         backdrop-filter: blur(5px);
       }
-      .banner-section{
+      .banner-section {
         position: relative;
+      }
+      .left-arrow {
+        rotate: 180deg;
+      }
+      #cat-top {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 40px;
+        align-items: center;
+      }
+      /* #categories-section{
+        width: 100dvw;
+      } */
+      #cat-1 {
+        background-image: url("https://images.unsplash.com/photo-1654064756910-974764816931?q=80&w=1190&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        width: 350px;
+        height: 200px;
+        object-fit: cover;
+        background-position: left;
+        border-radius: 10px;
+        position: relative;
+      }
+      #cat-2 {
+        background-image: url("https://images.unsplash.com/photo-1769888596701-c0fbc9bc71e5?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        width: 350px;
+        height: 200px;
+        object-fit: cover;
+        background-position: center;
+        border-radius: 10px;
+        position: relative;
+      }
+      .cat-prod-text {
+        background-color: rgba(255, 255, 255, 0.353);
+        position: absolute;
+        bottom: 0;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 5px;
+      }
+      #cat-bottom {
+        margin: 20px 40px;
+        display: flex;
+        gap: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        #ham-icon {
+          width: 30px;
+        }
+        .menu-items {
+          font-size: 1rem;
+        }
+        #cart-icon {
+          width: 20px;
+          margin-top: 5px;
+        }
+        .nav-top {
+          margin: 10px 5px;
+        }
+        li {
+          margin-right: 10px;
+        }
+        #logo {
+          margin-right: -40px;
+        }
+        .bottom {
+          overflow-x: auto;
+          justify-content: start;
+          margin-left: 10px;
+          scrollbar-width: none;
+          gap: 10px;
+        }
+        .cat-btn {
+          padding: 10px;
+        }
+        .banner-text {
+          font-size: 2.5rem;
+        }
+        .CTA-btn {
+          /* left: 0; */
+          margin-top: 20px;
+        }
+        #CTA-sec {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+        }
+        #cat-bottom {
+          flex-direction: column;
+        }
+      }
+      @media screen and ((min-width: 768px)and(max-width:1440px)) {
+        .CTA-btn {
+          bottom: 0;
+        }
       }
     </style>
   </head>
@@ -100,10 +194,11 @@
             src="https://static.vecteezy.com/system/resources/thumbnails/078/346/075/small/minimalist-hamburger-menu-icon-symbol-sign-shape-element-vector.jpg"
             alt="menu icon"
             width="50px"
+            id="ham-icon"
           />
         </div>
         <div>
-          <h1>Chefsy</h1>
+          <h1 id="logo">Chefsy</h1>
         </div>
         <div>
           <ul type="none">
@@ -114,6 +209,7 @@
                 src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0"
                 alt="shopping cart icon"
                 width="24px"
+                id="cart-icon"
               />
             </li>
           </ul>
@@ -132,33 +228,69 @@
           <option value="">Shirts</option>
         </select>
         <input type="search" placeholder="Search products" />
-        <button>Men</button>
-        <button>Women</button>
-        <button>Boy</button>
-        <button>Girl</button>
+        <button class="cat-btn">Men</button>
+        <button class="cat-btn">Women</button>
+        <button class="cat-btn">Boy</button>
+        <button class="cat-btn">Girl</button>
       </div>
     </div>
 
     <div class="banner-section">
-    <div class="banner">
-      <h1 class="banner-text">
-        Smart Kitchen <br />
-        Delicious Results.
-      </h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, placeat
-        autem.
-      </p>
-      <button class="CTA-btn">Shop Now</button>
+      <div class="banner">
+        <h1 class="banner-text">
+          Smart Kitchen <br />
+          Delicious Results.
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At, placeat
+          autem.
+        </p>
+        <div id="CTA-sec"><button class="CTA-btn">Shop Now</button></div>
+      </div>
+
+      <div class="user-info">
+        <h3>12 Million+</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda id
+          neque totam eveniet maiores vitae laboriosam veritatis vel.
+        </p>
+      </div>
     </div>
 
-    <div class="user-info">
-      <h3>12 Million+</h3>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda id
-        neque totam eveniet maiores vitae laboriosam veritatis vel.
-      </p>
-    </div>
+    <div id="categories-section">
+      <div id="cat-top">
+        <div>
+          <h2 style="font-size: 2rem">Categories</h2>
+        </div>
+        <div>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3762OuxdgSbo2Jaltyu7ViTmgfLmOXsZlng&s"
+            alt=""
+            width="30px"
+            class="left-arrow"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3762OuxdgSbo2Jaltyu7ViTmgfLmOXsZlng&s"
+            alt=""
+            width="30px"
+          />
+        </div>
+      </div>
+
+      <div id="cat-bottom">
+        <div id="cat-1">
+          <h3 class="cat-prod-text">Frying pan</h3>
+        </div>
+        <div id="cat-2">
+          <h3 class="cat-prod-text">Kettle</h3>
+        </div>
+        <div id="cat-1">
+          <h3 class="cat-prod-text">Frying pan</h3>
+        </div>
+        <div id="cat-1">
+          <h3 class="cat-prod-text">Frying pan</h3>
+        </div>
+      </div>
     </div>
   </body>
 </html>

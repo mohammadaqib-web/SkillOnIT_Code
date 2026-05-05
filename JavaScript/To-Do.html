@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #input-sec,
+      #taskView-sec {
+        text-align: center;
+      }
+      input,
+      button {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="input-sec">
+      <input type="text" placeholder="Enter some task" id="input-text" />
+      <button id="add-task">Add Task</button>
+    </div>
+
+    <div id="taskView-sec">
+      <ul id="task-sec" type="none"></ul>
+    </div>
+
+    <script>
+      let inputText = document.querySelector("#input-text");
+      let btn = document.querySelector("#add-task");
+      let unorderedList = document.querySelector("#task-sec");
+
+      btn.addEventListener("click", () => {
+        let list = document.createElement("li");
+        list.innerText = inputText.value;
+
+        let editBtn = document.createElement("button");
+        editBtn.innerText = "Edit";
+        editBtn.addEventListener("click", () => {
+          let editInput = document.createElement("input");
+          editInput.type = "text";
+          editInput.value = list.innerText.replace("EditDelete", "");
+
+          let saveBtn = document.createElement("button");
+          saveBtn.innerText = "Save";
+
+          saveBtn.addEventListener("click", () => {
+            list.innerText = editInput.value;
+
+            let editBtn = document.createElement("button");
+            editBtn.innerText = "Edit";
+            editBtn.addEventListener("click", () => {
+              let editInput = document.createElement("input");
+              editInput.type = "text";
+              editInput.value = list.innerText.replace("EditDelete", "");
+            });
+            
+            let delBtn = document.createElement("button");
+            delBtn.innerText = "Delete";
+            delBtn.addEventListener("click", () => {
+              list.remove();
+            });
+
+            list.append(editBtn, delBtn);
+          });
+
+          let cancelBtn = document.createElement("button");
+          cancelBtn.innerText = "Cancel";
+          cancelBtn.addEventListener("click", () => {
+            editInput.remove();
+            saveBtn.remove();
+            cancelBtn.remove();
+          });
+
+          list.append(editInput, saveBtn, cancelBtn);
+        });
+
+        let delBtn = document.createElement("button");
+        delBtn.innerText = "Delete";
+        delBtn.addEventListener("click", () => {
+          list.remove();
+        });
+
+        list.append(editBtn, delBtn);
+
+        unorderedList.append(list);
+        inputText.value = "";
+      });
+    </script>
+  </body>
+</html>

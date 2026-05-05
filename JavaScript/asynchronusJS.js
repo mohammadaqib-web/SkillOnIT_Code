@@ -1,26 +1,25 @@
-// '[1,2,3,4]'
-// {[1,2,3,4]}
+'[1,2,3,4]'
+{[1,2,3,4]}
 // let val = [];
 
-// function apiCall() {
-//   const api = fetch("https://jsonplaceholder.typicode.com/users")
-//     .then((res) => res.json())
-//     .then((data) => console.log(data))
-//     .catch(console.error("error"));
-// }
+function apiCall() {
+  const api = fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+}
 
-// async function apiCall() {
-//   try {
-//     const api = await fetch("https://jsonplaceholder.typicode.com/users");
-//     if (!api.ok) {
-//       return console.log("api failed");
-//     }
-//     const data = await api.json();
-//     console.log(data);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }4
+async function apiCall() {
+  try {
+    const api = await fetch("https://jsonplaceholder.typicode.com/users");
+    if (!api.ok) {
+      return console.log("api failed");
+    }
+    const data = await api.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 let seconds = 0
 let minutes = 0
@@ -56,3 +55,4 @@ setInterval(()=>{
 // }, 1000);
 
 // console.log("after calling fn");
+
