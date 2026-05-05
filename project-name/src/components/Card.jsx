@@ -24,9 +24,6 @@ function Card({ title, Description, imageLink }) {
             style={{
               fontSize: "20px",
               width: "100%",
-              overflow: "hidden",
-              whiteSpace: "nowrap",
-              textOverflow: "ellipsis",
             }}
           >
             {title || "User"}
