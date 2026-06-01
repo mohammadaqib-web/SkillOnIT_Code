@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #box,
+      #box2,
+      #box3 {
+        height: 200px;
+        /* width: 200px; */
+        border: 2px solid;
+      }
+      @media screen and (max-width: 425px) {
+        #box,
+        #box2,
+        #box3 {
+          background-color: red;
+          width: 100%;
+        }
+      }
+      @media screen and (min-width: 425px) and (max-width: 768px) {
+        #box,
+        #box2,
+        #box3 {
+          background-color: green;
+        }
+        #main {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media screen and (min-width: 768px) {
+        #box,
+        #box2,
+        #box3 {
+          background-color: violet;
+        }
+        #main {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="box"></div>
+      <div id="box2"></div>
+      <div id="box3"></div>
+    </div>
+  </body>
+</html>

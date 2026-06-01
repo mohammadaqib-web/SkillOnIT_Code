@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        /* background-color: black; */
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        background-color: black;
+      }
+      #to-do {
+        width: 350px;
+        height: 300px;
+        border-radius: 20px;
+        padding-top: 20px;
+      }
+      h1 {
+        text-decoration: underline;
+      }
+      #input-sec {
+        margin-top: 20px;
+      }
+      input,
+      button {
+        padding: 10px;
+        border: none;
+      }
+      button {
+        margin-left: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      input{
+        border-radius: 10px;
+      }
+      li {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="to-do">
+      <h1>TO DO APP</h1>
+      <div id="input-sec">
+        <input type="text" placeholder="Enter Task" id="input-task" />
+        <button id="add-btn">Add Task</button>
+      </div>
+      <ul id="task-list" type="none"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
