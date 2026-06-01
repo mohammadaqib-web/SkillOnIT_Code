@@ -1,0 +1,19 @@
+name: API Calls
+
+on: push
+
+jobs: 
+ build:
+  runs-on: ubuntu-latest
+
+  steps: 
+    -name: Install Node
+    uses: actions/setup-node@v4
+    with:
+      node-version: 22
+
+    -name: Install Dependencies
+    run: npm Install
+
+    -name: Build App
+    run: npm run build
