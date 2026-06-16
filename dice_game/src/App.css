@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#heading {
+  font-size: 6rem;
+}
+#play {
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bolder;
+  margin-top: 20px;
+  cursor: pointer;
+  
+}
+#ts{
+  font-size: 4rem;
+  text-align: center;
+}
+.numbers{
+  border: 1px solid;
+  padding: 20px;
+  cursor: pointer;
+}
+#right-nav{
+  display: flex;
+  gap: 15px;
+}
+#nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+}
+#main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 280px;
+}
+.dice-btn{
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
