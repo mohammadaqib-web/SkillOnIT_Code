@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+      }
+      .time {
+        height: 130px;
+        width: 100px;
+        background-color: rgba(128, 128, 128, 0.241);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        font-size: 7rem;
+      }
+      #main {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div class="time" id="hour-1">0</div>
+      <div class="time" id="hour-2">0</div>
+      <div style="color: white; font-size: 7rem">:</div>
+      <div class="time" id="min-1">0</div>
+      <div class="time" id="min-2">0</div>
+      <div style="color: white; font-size: 7rem">:</div>
+      <div class="time" id="sec-1">0</div>
+      <div class="time" id="sec-2">0</div>
+    </div>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

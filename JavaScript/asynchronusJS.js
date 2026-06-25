@@ -1,58 +1,52 @@
-'[1,2,3,4]'
-{[1,2,3,4]}
-// let val = [];
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((resp) => resp.json())
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log("Api not fetching"))
+//   .finally(console.log("finally"));
 
-function apiCall() {
-  const api = fetch("https://jsonplaceholder.typicode.com/users")
-    .then((res) => res.json())
-    .then((data) => console.log(data))
+// try {
+//   fetch("https://jsonplaceholder.typicode.com/users")
+//     .then((resp) => resp.json())
+//     .then((data) => console.log(data));
+// } catch (error) {
+//   console.log(error);
+// } finally {
+// }
+
+// let arr = [1,2,3,4,5]
+
+// let arr2 = [6,7,8,9,10]
+
+// arr.push(...arr2);
+// console.log(arr);
+
+let obj = {
+  name:"John",
+  age:25
 }
 
-async function apiCall() {
-  try {
-    const api = await fetch("https://jsonplaceholder.typicode.com/users");
-    if (!api.ok) {
-      return console.log("api failed");
-    }
-    const data = await api.json();
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
+let obj2 = {
+  city:"Buldana",
+  state:"Maharashtra"
 }
 
-let seconds = 0
-let minutes = 0
-let hours = 0
+obj = {...obj,...obj2}
+console.log(obj);
 
-setInterval(()=>{
-    if(seconds===60){
-        minutes+=1
-        seconds=0
-    }
-    seconds+=1
-    if(minutes===60){
-        hours+=1
-        minutes=0
-    }
-    console.log(`${hours}:${minutes}:${seconds}`);
-},1000)
 
-// setInterval(() => {
-//   const date = new Date();
-//   console.log(date.getHours(), date.getMinutes(), date.getSeconds());
-// }, 1000);
 
-// console.log("before calling fn");
+// async function apiCall() {
+//   try {
+//     const resp = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = await resp.json();
+//     // console.log(data);
+//     arr.push(...data);
+//     console.log(arr);
+    
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-// // apiCall();
-// setTimeout(() => {
-//   console.log("setTimeout");
-// }, 1000);
-
-// setInterval(() => {
-//   console.log("setInterval");
-// }, 1000);
-
-// console.log("after calling fn");
-
+// apiCall()
+// console.log(arr);

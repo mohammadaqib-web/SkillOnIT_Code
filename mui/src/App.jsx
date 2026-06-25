@@ -2,8 +2,16 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    fetch("http://localhost:5000/")
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
+  }, []);
+  
   return (
     <Box sx={{ display: "flex", gap: "20px" }}>
       <Box sx={{ width: "50%", display: "flex", justifyContent: "end" }}>
@@ -18,12 +26,20 @@ function App() {
         <Typography variant="h4">Elite Chair</Typography>
         <Typography variant="body1">$99</Typography>
 
-
-        <Button variant="outlined" color="dark" sx={{borderRadius:"20px"}}>Add to Cart</Button>
+        <Button variant="outlined" color="dark" sx={{ borderRadius: "20px" }}>
+          Add to Cart
+        </Button>
         <Button
           variant="contained"
-          sx={{ backgroundColor: "black", color: "white",borderRadius:"20px",ml:1 }}
-        >Buy Now</Button>
+          sx={{
+            backgroundColor: "black",
+            color: "white",
+            borderRadius: "20px",
+            ml: 1,
+          }}
+        >
+          Buy Now
+        </Button>
       </Box>
     </Box>
   );

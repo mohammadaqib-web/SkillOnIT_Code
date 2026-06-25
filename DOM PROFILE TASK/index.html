@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="left">
+        <h1 id="form-heading">Create New Profile</h1>
+        <p>Fill in the details to add a new user profile.</p>
+
+        <form>
+          <label for="name">Full Name</label>
+          <br />
+          <input type="text" placeholder="Enter full name" id="name" />
+
+          <br />
+          <br />
+          <label for="age">Age</label>
+          <br />
+          <input type="number" placeholder="Enter age" id="age" />
+
+          <br />
+          <br />
+          <label for="profession">Profession</label>
+          <br />
+          <input type="text" placeholder="Enter profession" id="profession" />
+
+          <br />
+          <br />
+          <label for="city">City</label>
+          <br />
+          <input type="text" placeholder="Enter city" id="city" />
+
+          <br />
+          <br />
+          <label for="image">Profile Image URL</label>
+          <br />
+          <input type="text" placeholder="Enter image url" id="image" />
+
+          <br />
+          <br />
+          <label for="bio">Bio</label>
+          <br />
+          <textarea
+            rows="5"
+            id="bio"
+            placeholder="Write a short bio about the user..."
+          ></textarea>
+
+          <br />
+          <br />
+          <button id="submit">Add Profile</button>
+          <br />
+          <br />
+          <button type="reset" id="reset">Reset Form</button>
+        </form>
+      </div>
+      <div id="right">
+        <div id="navbar">
+          <div>
+            <h1>All Profiles</h1>
+            <p>Here are all the user profiles you've created</p>
+          </div>
+          <div id="nav-right">
+            <p id="all-profiles">All Profiles: 5</p>
+            <button id="clear">Clear All</button>
+          </div>
+        </div>
+
+        <div id="container">
+          <!-- <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAmuG6Czwvi7vT4RCAckWs5km8-O7dfBJj3uAm4b6OAPN0bAO2sG9UDdo&s=10"
+              alt="profile image"
+            />
+            <h2>Name</h2>
+            <span class="card-profession">Profession</span>
+
+            <div class="card-info-div">
+              <p class="info"><p class="icon">📅</p> <span>Age: </span> <span>20</span></p>
+              <p class="info"><p class="icon">👜</p> <span>Profession: </span> <span>20</span></p>
+              <p class="info"><p class="icon">📍</p> <span>City: </span> <span>20</span></p>
+              <p class="info"><p class="icon">ℹ</p> <span>Bio: </span> <span>20</span></p>
+            </div>
+
+            <button class="delete-btn">Delete</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

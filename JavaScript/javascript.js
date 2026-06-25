@@ -1,42 +1,40 @@
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let hour1 = document.querySelector("#hour-1");
+let hour2 = document.querySelector("#hour-2");
 
-console.log(arr.indexOf(11));
+let min1 = document.querySelector("#min-1");
+let min2 = document.querySelector("#min-2");
 
-console.log(arr.includes(11));
+let sec1 = document.querySelector("#sec-1");
+let sec2 = document.querySelector("#sec-2");
 
-let find8 = arr.find((item, index) => {
-  return item == 8;
-});
+function clock() {
+  let date = new Date();
 
-let find8Short = arr.find((item) => item == 11);
+  if (!date.getHours().toString()[1]) {
+    hour1.innerText = 0;
+    hour2.innerText = date.getHours().toString()[0];
+  } else {
+    hour1.innerText = date.getHours().toString()[0];
+    hour2.innerText = date.getHours().toString()[1];
+  }
 
-console.log(find8, find8Short);
+  if (!date.getMinutes().toString()[1]) {
+    min1.innerText = 0;
+    min2.innerText = date.getMinutes().toString()[0];
+  } else {
+    min1.innerText = date.getMinutes().toString()[0];
+    min2.innerText = date.getMinutes().toString()[1];
+  }
 
-let addition = arr.reduce((a, b) => a + b);
+  if (!date.getSeconds().toString()[1]) {
+    sec1.innerText = 0;
+    sec2.innerText = date.getSeconds().toString()[0];
+  } else {
+    sec1.innerText = date.getSeconds().toString()[0];
+    sec2.innerText = date.getSeconds().toString()[1];
+  }
+}
 
-console.log(addition);
-
-let filterArr = arr.filter((item, index) => {
-  return item < 5;
-});
-
-// modulus
-console.log(filterArr);
-
-// arr.push(6, 7, 8, 9, 10);
-// arr.pop();
-
-// arr.unshift(0, 1, 2);
-// arr.shift();
-
-// console.log(arr[0]);
-
-// let newForEachArr = arr.forEach((item, index) => {
-//   return item;
-// });
-
-// let newMapArr = arr.map((item, index) => {
-//   return item * 10;
-// });
-
-// console.log(newMapArr);
+setInterval(() => {
+  clock();
+}, 1000);

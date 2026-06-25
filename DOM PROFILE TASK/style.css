@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#main {
+  display: flex;
+}
+#left {
+  border: 1px solid grey;
+  padding: 15px;
+  width: 35%;
+}
+#form-heading {
+  color: purple;
+}
+form {
+  margin-top: 30px;
+}
+input,
+textarea {
+  margin-top: 10px;
+  padding: 8px;
+  width: 94%;
+  /* border-radius: 4px; */
+  /* border: none; */
+}
+#submit,
+#reset {
+  width: 100%;
+  padding: 10px;
+}
+#submit {
+  background-color: purple;
+  color: white;
+  border: none;
+}
+#reset {
+  border: none;
+}
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#right {
+  width: 100%;
+  padding: 15px;
+}
+#nav-right {
+  display: flex;
+  gap: 10px;
+}
+#all-profiles{
+    color: purple;
+    background-color: rgba(128, 0, 128, 0.332);
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+#clear{
+    color: red;
+    border: 1px solid red;
+    padding: 3px 5px;
+    background-color: white;
+
+}
+.card{
+    height: 320px;
+    /* max-height: 350px; */
+    width: 250px;
+    border: 1px solid rgba(128, 128, 128, 0.441);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+#container{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.card-profession{
+    color: purple;
+    background-color: rgba(128, 0, 128, 0.332);
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+h2{
+    margin-bottom: 5px;
+}
+.card-info{
+    margin-top: 15px;
+}
+.card-info-div{
+    text-align: left;
+    margin-top: 15px;
+}
+.icon{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
+.info{
+    margin-top: 5px;
+}
+.delete-btn{
+    width: 100%;
+    padding: 10px;
+    color: red;
+    border: 1px solid red;
+    background-color: white;
+    margin-top: 15px;
+}
