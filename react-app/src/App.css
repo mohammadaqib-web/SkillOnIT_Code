@@ -1,0 +1,21 @@
+*{
+  /* margin: 0; */
+  padding: 0;
+}
+#card{
+  height: 390px;
+  width: 250px;
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+img{
+  border-radius: 50%;
+  object-fit: cover;
+}
+#container{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

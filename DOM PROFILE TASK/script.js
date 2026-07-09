@@ -109,9 +109,9 @@ document.querySelector("#submit").addEventListener("click", (e) => {
   deleteBtn.classList.add("delete-btn");
   deleteBtn.innerText = "Delete";
 
-  deleteBtn.addEventListener("click",()=>{
-    card.remove()
-  })
+  deleteBtn.addEventListener("click", () => {
+    card.remove();
+  });
 
   card.append(deleteBtn);
   container.append(card);

@@ -11,6 +11,7 @@
       }
       body {
         background-color: rgb(25, 85, 141);
+        padding: 20px 30px;
       }
       #navbar {
         display: flex;
@@ -78,12 +79,21 @@
       </div>
       <div id="main">
         <div id="left">
-          <input type="search" name="" id="" placeholder="Search for city..." />
-          <h1 style="margin-top: 30px">City, State</h1>
-          <p>Day</p>
-          <p>Time</p>
+          <input
+            type="search"
+            name=""
+            id="search"
+            placeholder="Search for city..."
+          />
+          <br />
+          <img src="" alt="" id="image" />
+          <h1 style="margin-top: 30px">
+            <span id="city">City</span>, <span id="state">State</span>
+          </h1>
+          <p id="day">Day</p>
+          <p id="time">Time</p>
           <h1 style="font-size: 5rem">
-            24
+            <span id="temp">24</span>
             <span
               style="
                 font-size: 1.5rem;
@@ -93,7 +103,7 @@
               >&deg; C</span
             >
           </h1>
-          <h1>Partly Cloudy</h1>
+          <h1 id="condition">Partly Cloudy</h1>
         </div>
         <div id="right">
           <div class="right-div">
@@ -102,7 +112,7 @@
             </div>
             <div>
               <p style="font-size: 0.8rem">Feels like</p>
-              <h4>25 &deg;C</h4>
+              <h4><span id="feels-like">25</span> &deg;C</h4>
             </div>
           </div>
           <div class="right-div">
@@ -111,7 +121,7 @@
             </div>
             <div>
               <p style="font-size: 0.8rem">Humidity</p>
-              <h4>60%</h4>
+              <h4><span id="humidity">60</span>%</h4>
             </div>
           </div>
           <div class="right-div">
@@ -120,7 +130,7 @@
             </div>
             <div>
               <p style="font-size: 0.8rem">Wind</p>
-              <h4>12 km/h</h4>
+              <h4><span id="wind">12</span> km/h</h4>
             </div>
           </div>
           <div class="right-div">
@@ -129,7 +139,7 @@
             </div>
             <div>
               <p style="font-size: 0.8rem">Visibility</p>
-              <h4>10 km</h4>
+              <h4><span id="vis">10</span> km</h4>
             </div>
           </div>
           <div class="right-div" style="border: none">
@@ -138,11 +148,13 @@
             </div>
             <div>
               <p style="font-size: 0.8rem">Pressure</p>
-              <h4>1012 hPa</h4>
+              <h4><span id="pressure">1012</span> hPa</h4>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,27 +1,34 @@
 const express = require("express");
 const cors = require("cors");
-const { MongoClient } = require("mongodb");
+// const { MongoClient } = require("mongodb");
 
-const client = new MongoClient(
-  "mongodb+srv://mohdaqib918_db_user:b6EIBeDXmTZMnwOc@cluster0.byzhoiy.mongodb.net/?appName=Cluster0",
-);
+// const client = new MongoClient(
+//   "mongodb+srv://mohdaqib918_db_user:b6EIBeDXmTZMnwOc@cluster0.byzhoiy.mongodb.net/?appName=Cluster0",
+// );
 
-async function DBConnect() {
-  try {
-    await client.connect();
-    const db = client.db("website");
-    const usersCollection = db.collection("users");
-    console.log("Databse Connected");
+// async function DBConnect() {
+//   try {
+//     await client.connect();
+//     const db = client.db("website");
+//     const usersCollection = db.collection("users");
+//     console.log("Databse Connected");
 
-    const data = await usersCollection.findOneAndDelete({
-      age: 24,
-    });
-    console.log(data);
-    
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     const data = await usersCollection.findOneAndDelete({
+//       age: 24,
+//     });
+//     console.log(data);
+
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+const { MongoClient, ObjectId } = require("mongodb");
+const { getUsers } = require("./controllers/users");
+const userRoutes = require("./routes/userRoutes")
+
+const url =
+  "mongodb+srv://mohdaqib918_db_user:Q6RbefrbTM766en4@cluster0.2kehpe7.mongodb.net/?appName=Cluster0";
 
 const app = express();
 app.use(express.json());
@@ -34,31 +41,29 @@ const obj = {
   location: "Maharashtra",
 };
 
-app.get(
-  "/",
-  (req, res, next) => {
-    try {
-      if (req.params.user) {
-        console.log("Middleware 1");
-        next();
-      } else {
-        console.log("No params found");
-        return res.status(404).json({ message: "missing parameters" });
-      }
-    } catch (error) {
-      console.log(error);
-      next(error);
-    }
-  },
-  (req, res, next) => {
-    console.log("Middleware 2");
-    next();
-  },
-  (req, res) => {
-    console.log(arr);
-    return res.status(200).json({ data: obj });
-  },
-);
+const client = new MongoClient(url);
+
+async function DBConnect() {
+  try {
+    await client.connect();
+    const db = client.db("crud");
+    const collection = db.collection("users");
+
+    // const data = await collection.updateOne({name:"John"},{$set:{age:50}});
+    await collection.insertMany([
+      { name: "Alex", age: 20, course: "Full Stack" },
+      { username: "Alex", age: 20, course: "Full Stack" },
+    ]);
+
+    console.log("Database Connected");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+app.use("/user",userRoutes)
+
+app.get("/", getUsers);
 
 app.post("/:newUser", (req, res) => {
   const data = req.params;
