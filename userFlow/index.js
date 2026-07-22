@@ -12,6 +12,10 @@ app.use(cors());
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/post", postRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Server is running" });
+});
+
 async function dbConnection() {
   try {
     await mongoose.connect(process.env.MONGODB_URL);
