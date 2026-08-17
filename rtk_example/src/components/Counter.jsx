@@ -1,12 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Decrement, Increment, Reset } from "../redux/CounterSlice";
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Counter() {
   const dispatch = useDispatch();
 
   return (
     <div>
+      {/* <Navbar/> */}
+      <Link to={"/about"}>About</Link>
       <button
         onClick={() => {
           dispatch(Increment(1));

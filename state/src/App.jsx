@@ -1,38 +1,25 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import About from "./components/About";
+import PageNotFound from "./components/PageNotFound";
+import "./App.css";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [inputValue, setInputValue] = useState("");
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/${inputValue}`)
-      .then((res) => res.json())
-      .then((data2) => {
-        if (data2) setData(data2);
-      });
-  }, [inputValue]);
-
   return (
-    <div>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
-      {data.length>0 && data?.map((item, index) => {
-        return (
-          <div key={index}>
-            <h1>
-              {item.id}- {item.name}
-            </h1>
-            <h3>{item.email}</h3>
-            <h3>{item.phone}</h3>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </>
   );
 }
 

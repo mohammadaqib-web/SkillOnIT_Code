@@ -5,41 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      * {
-        margin: 0;
-      }
-      #main1 {
+      #box {
         height: 200px;
         width: 200px;
-        background-image: url("./How-to-find-b2b-blog-images.png");
-        border: 1px solid;
-        /* display: flex; */
+        background-color: red;
+        /* background-image: url(""); */
+        
+        border-radius: 50%;
       }
-      #main2 {
+      img{
         height: 200px;
         width: 200px;
-        background-color: blue;
-        border: 1px solid;
-        /* display: flex; */
+        animation: moveBox 1s infinite;
       }
-      #main {
-        display: grid;
-        height: 100vh;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 30px;
+      @keyframes moveBox {
+        0% {
+          transform: scale(1)
+        }
+        100% {
+          transform: scale(1.1)
+        }
       }
     </style>
   </head>
   <body>
-    <!-- <div id="main">
-      <div id="main1"></div>
-      <div id="main2"></div>
-      <div id="main2"></div>
-      <div id="main2"></div>
-      <div id="main2"></div>
-      <div id="main2"></div>
-      <div id="main2"></div>
-      <div id="main2"></div>
-    </div> -->
+    <div id="box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShH1kez-kvXWmTeHsOyUMAUWWQndwICdvCRFIxMBFFOQ&s=10" alt="">
+    </div>
   </body>
 </html>
